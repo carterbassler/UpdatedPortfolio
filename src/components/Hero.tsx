@@ -11,13 +11,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "./ui/carousel";
 import { Skeleton } from "@/components/ui/skeleton";
 
 type Props = {};
@@ -50,7 +43,7 @@ function Hero({}: Props) {
           </Button>
         </a>
       </div>
-      <div className="flex flex-row space-x-20 p-10 items-center justify-center">
+      <div className="flex flex-row space-x-10 p-10 items-center justify-center">
         <Card>
           <CardHeader>
             <CardTitle className="text-3xl">Professional Experience</CardTitle>
@@ -73,22 +66,12 @@ function Hero({}: Props) {
             </Button>
           </CardFooter>
         </Card>
-        <Carousel>
-          <CarouselContent>
-            <CarouselItem>
-              <iframe
-                src="https://open.spotify.com/embed/playlist/3vYRlhFbkQaJzsV4kXBFV0?utm_source=generator"
-                width="100%"
-                height="400"
-                allow="autoplay; clipboard-write;"
-              />
-            </CarouselItem>
-            <CarouselItem></CarouselItem>
-            <CarouselItem>...</CarouselItem>
-          </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
-        </Carousel>
+        <iframe
+          src="https://open.spotify.com/embed/playlist/3vYRlhFbkQaJzsV4kXBFV0?utm_source=generator"
+          width="40%"
+          height="400"
+          allow="autoplay; clipboard-write;"
+        />
         <Card>
           <CardHeader>
             <CardTitle className="text-3xl">Personal Projects</CardTitle>
