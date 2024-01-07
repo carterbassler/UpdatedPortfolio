@@ -59,3 +59,7 @@
     @apply bg-background text-foreground;
   }
 }
+
+.custom-border-transition {
+  transition: border-color 0.4s ease-in-out;
+}

@@ -12,6 +12,8 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import ProjectCard from "@/components/ProjectCard";
+import { motion } from "framer-motion";
+import { Linkedin } from "lucide-react";
 
 class Framework {
   name: string;
@@ -50,8 +52,8 @@ const tailwindCSS = new Framework("TailwindCSS", "tailwindcss.png");
 const django = new Framework("Django", "/django.png");
 const postgresql = new Framework("PostgreSQL", "postgresql.png");
 const heroku = new Framework("Heroku", "/heroku.png");
-const python = new Framework("Python","/python.png")
-const fastapi = new Framework("FastAPI","/fastapi.png")
+const python = new Framework("Python", "/python.png");
+const fastapi = new Framework("FastAPI", "/fastapi.png");
 
 const project1 = new Project(
   "Imperium",
@@ -77,13 +79,15 @@ const project3 = new Project(
 const project4 = new Project(
   "Sports Betting Helper",
   "A full-stack NextJs web app processes and aggregates odds from 5 sportsbooks using advanced data analysis to identify arbitrage opportunities and bets with positive Expected Value (EV), enhancing decision-making.",
-  [nextjs,typescript,vercel,python,fastapi],
+  [nextjs, typescript, vercel, python, fastapi],
   ""
 );
 
 type Props = {};
 
 function projects({}: Props) {
+  const transitionDuration = 1.7; // seconds, increased duration
+  const delayOffset = 0.4;
   return (
     <div className="bg-main min-h-screen flex flex-col p-6 overflow-auto">
       <Link
@@ -93,23 +97,40 @@ function projects({}: Props) {
         &larr; Go Back
       </Link>
       <div>
-        <h1 className="text-5xl font-bold text-white py-2">
+        <motion.h1
+          className="text-5xl font-bold text-white py-2"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 2 }}
+        >
           Personal Projects
-        </h1>
-        <p className="text-xl text-text py-2">
+        </motion.h1>
+        <motion.p
+          className="text-xl text-text py-2"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 2 }}
+        >
           I love hacking together cool projects in my free time.{" "}
-        </p>
+        </motion.p>
         <Separator className="pb-5" />
-        {/* <div className="flex flex-row items-center justify-center space-x-5">
-          <ProjectCard project={project1} />
-          <ProjectCard project={project2} />
-          <ProjectCard project={project3} />
-        </div> */}
-        <div className="grid grid-cols-2 items-center justify-center gap-6">
-          <ProjectCard project={project1} />
-          <ProjectCard project={project2} />
-          <ProjectCard project={project3} />
-          <ProjectCard project={project4} />
+        <div className="grid grid-cols-2 items-center justify-center gap-8">
+          {[project1, project2, project3, project4].map((project, index) => (
+            <motion.div
+              key={project.title}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{
+                delay: index * delayOffset,
+                duration: transitionDuration,
+                ease: "easeInOut",
+              }}
+            >
+              <ProjectCard project={project} />
+            </motion.div>
+          ))}
         </div>
       </div>
     </div>

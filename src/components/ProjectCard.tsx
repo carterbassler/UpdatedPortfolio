@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/tooltip";
 
 import { Button } from "./ui/button";
-import { ArrowRightIcon, ChevronRightIcon, Github, Link } from "lucide-react";
+import { ArrowRightIcon, ChevronRightIcon, Github, Link, Linkedin } from "lucide-react";
 
 class Framework {
   name: string;
@@ -51,7 +51,7 @@ type Props = {
 function ProjectCard({ project }: Props) {
   return (
     <div>
-      <Card className="">
+      <Card>
         <CardHeader>
           <CardTitle className="text-3xl text-white">{project.title}</CardTitle>
           {/* <img
@@ -92,12 +92,12 @@ function ProjectCard({ project }: Props) {
               <ArrowRightIcon className="h-4 text-white"></ArrowRightIcon>
             </div>
             <div>
-              <Button variant="outline" size="icon">
-                <Link className="h-4 w-4 text-white" />
+              <Button variant="ghost" size="icon" className="hover:bg-main/5">
+                <Link className="h-4 w-4 text-text hover:text-white custom-border-transition" />
               </Button>
               <a href={project.link}>
-                <Button variant="destructive" size="icon">
-                  <Github className="h-4 w-4 text-white" />
+                <Button variant="outline" size="icon">
+                  <Github className="h-4 w-4 text-text hover:text-white custom-border-transition" />
                 </Button>
               </a>
             </div>
