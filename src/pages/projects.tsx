@@ -77,7 +77,7 @@ const project3 = new Project(
 );
 
 const project4 = new Project(
-  "Sports Betting Helper",
+  "EdgeVantage  ",
   "A full-stack NextJs web app processes and aggregates odds from 5 sportsbooks using advanced data analysis to identify arbitrage opportunities and bets with positive Expected Value (EV), enhancing decision-making.",
   [nextjs, typescript, vercel, python, fastapi],
   ""

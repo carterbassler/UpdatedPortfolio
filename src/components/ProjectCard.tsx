@@ -58,7 +58,7 @@ function ProjectCard({ project }: Props) {
               src="/imperiumProj.png"
               className="md:w-98 md:h-64 rounded-lg object-center"
             /> */}
-          <CardDescription className="text-xs md:text-base text-text font-semibold">
+          <CardDescription className="text-xs md:text-sm text-text font-semibold">
             {project.description}
           </CardDescription>
         </CardHeader>

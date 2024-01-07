@@ -28,7 +28,7 @@ function Hero({}: Props) {
         transition={{ duration: 3 }}
       >
         <Avatar className="flex h-20 w-16 md:h-24 md:w-20">
-          <AvatarImage src="/memoji.jpg" />
+          <AvatarImage src="/memoji.png" />
           <AvatarFallback>CB</AvatarFallback>
         </Avatar>
         <h1 className="text-3xl md:text-5xl font-bold text-white">
@@ -77,7 +77,7 @@ function Hero({}: Props) {
               <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
               <p className="text-sm md:text-base text-white">Currently:</p>
               <p className="text-sm md:text-base text-white font-semibold">
-                Looking for New Grad Ops
+                Looking for New Grad Ops 👋
               </p>
             </div>
           </CardContent>
@@ -89,10 +89,10 @@ function Hero({}: Props) {
             </Button>
           </CardFooter>
         </Card>
-        <div className="hidden md:flex">
+        <div className="hidden md:flex justify-center items-center">
           <motion.iframe
             src="https://open.spotify.com/embed/playlist/3vYRlhFbkQaJzsV4kXBFV0?utm_source=generator"
-            width="100%"
+            width="350"
             height="400"
             allow="autoplay; clipboard-write;"
             initial={{ opacity: 0 }}
@@ -116,7 +116,7 @@ function Hero({}: Props) {
               <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
               <p className="text-sm md:text-base text-white">Currently:</p>
               <p className="text-sm md:text-base text-white font-semibold">
-                Working on Sports App
+                Working on EdgeVantage 🏈
               </p>
             </div>
           </CardContent>
