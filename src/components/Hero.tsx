@@ -19,7 +19,7 @@ type Props = {};
 
 function Hero({}: Props) {
   return (
-    <div className="bg-main h-screen flex flex-col items-center justify-center">
+    <div className="bg-main min-h-screen flex flex-col items-center justify-center">
       <motion.div
         className="flex flex-col items-center justify-center"
         initial={{ opacity: 0 }}

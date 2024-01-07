@@ -98,7 +98,7 @@ function projects({}: Props) {
       </Link>
       <div>
         <motion.h1
-          className="text-5xl font-bold text-white py-2"
+          className="text-3xl md:text-5xl font-bold text-white py-2"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -107,7 +107,7 @@ function projects({}: Props) {
           Personal Projects
         </motion.h1>
         <motion.p
-          className="text-xl text-text py-2"
+          className="text-lg md:text-xl text-text py-2"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -116,7 +116,7 @@ function projects({}: Props) {
           I love hacking together cool projects in my free time.{" "}
         </motion.p>
         <Separator className="pb-5" />
-        <div className="grid grid-cols-2 items-center justify-center gap-8">
+        <div className="flex flex-col md:grid md:grid-cols-2 items-center justify-center gap-8">
           {[project1, project2, project3, project4].map((project, index) => (
             <motion.div
               key={project.title}

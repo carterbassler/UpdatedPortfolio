@@ -53,12 +53,12 @@ function ProjectCard({ project }: Props) {
     <div>
       <Card>
         <CardHeader>
-          <CardTitle className="text-3xl text-white">{project.title}</CardTitle>
+          <CardTitle className="text-xl md:text-3xl text-white">{project.title}</CardTitle>
           {/* <img
               src="/imperiumProj.png"
               className="md:w-98 md:h-64 rounded-lg object-center"
             /> */}
-          <CardDescription className="text-text font-semibold">
+          <CardDescription className="text-xs md:text-base text-text font-semibold">
             {project.description}
           </CardDescription>
         </CardHeader>
@@ -71,7 +71,7 @@ function ProjectCard({ project }: Props) {
                     <TooltipTrigger>
                       <img
                         src={icon.icon}
-                        className="w-12 h-12 md:w-8 md:h-8 rounded-full md:rounded-full object-contain object-center"
+                        className="w-6 h-6 md:w-8 md:h-8 rounded-full md:rounded-full object-contain object-center"
                       />
                     </TooltipTrigger>
                     <TooltipContent className="flex items-center">
