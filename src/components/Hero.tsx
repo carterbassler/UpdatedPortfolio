@@ -31,8 +31,10 @@ function Hero({}: Props) {
           <AvatarImage src="/memoji.jpg" />
           <AvatarFallback>CB</AvatarFallback>
         </Avatar>
-        <h1 className="text-3xl md:text-5xl font-bold text-white">Carter Bassler</h1>
-        <p className="text-md md:text-lg text-text p-2">
+        <h1 className="text-3xl md:text-5xl font-bold text-white">
+          Carter Bassler
+        </h1>
+        <p className="text-center text-md md:text-lg text-text p-2">
           Software Developer. Pickleball Savant. All Around Great Guy
         </p>
         <div className="flex flex-row items-center">
@@ -54,7 +56,7 @@ function Hero({}: Props) {
         </div>
       </motion.div>
       <motion.div
-        className="flex flex-col md:flex-row space-y-5 md:space-x-10 p-10 items-center justify-center w-full"
+        className="flex flex-col md:flex-row space-y-5 md:space-y-0 md:space-x-10 p-10 items-center justify-center w-full"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
@@ -62,24 +64,26 @@ function Hero({}: Props) {
       >
         <Card className="custom-border-transition hover:border-white">
           <CardHeader>
-            <CardTitle className="flex flex-row items-center text-3xl">
-              <Briefcase className="mr-2 h-8 w-8" />
+            <CardTitle className="flex flex-row items-center text-lg md:text-3xl">
+              <Briefcase className="mr-2 h-4 w-4 md:h-8 md:w-8" />
               Professional Experience
             </CardTitle>
-            <CardDescription>
+            <CardDescription className="text-sm md:text-md">
               Check out some of my cool work experiences I've had.
             </CardDescription>
           </CardHeader>
           <CardContent>
             <div className="flex flex-row space-x-2 items-center">
               <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
-              <p className="text-white">Currently:</p>
-              <p className="text-white font-semibold">Looking for New Grad Ops</p>
+              <p className="text-sm md:text-base text-white">Currently:</p>
+              <p className="text-sm md:text-base text-white font-semibold">
+                Looking for New Grad Ops
+              </p>
             </div>
           </CardContent>
           <CardFooter>
             <Button variant="link" className="p-0">
-              <a className="text-white" href="/work">
+              <a className="text-sm md:text-base text-white" href="/work">
                 Deep Dive
               </a>
             </Button>
@@ -99,24 +103,26 @@ function Hero({}: Props) {
         </div>
         <Card className="custom-border-transition hover:border-white">
           <CardHeader>
-            <CardTitle className="flex flex-row items-center text-3xl">
-              <AppWindow className="mr-2 h-8 w-8" />
+            <CardTitle className="flex flex-row items-center text-lg md:text-3xl">
+              <AppWindow className="mr-2 h-4 w-4 md:h-8 md:w-8" />
               Personal Projects
             </CardTitle>
-            <CardDescription>
+            <CardDescription className="text-sm md:text-md">
               Check out some of my cool work experiences I've had.
             </CardDescription>
           </CardHeader>
           <CardContent>
             <div className="flex flex-row space-x-2 items-center">
               <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-              <p className="text-white">Currently:</p>
-              <p className="text-white font-semibold">Working on Sports App 🏈</p>
+              <p className="text-sm md:text-base text-white">Currently:</p>
+              <p className="text-sm md:text-base text-white font-semibold">
+                Working on Sports App
+              </p>
             </div>
           </CardContent>
           <CardFooter>
             <Button variant="link" className="p-0">
-              <a className="text-white" href="/projects">
+              <a className="text-sm md:text-base text-white" href="/projects">
                 Drop In
               </a>
             </Button>
