@@ -43,24 +43,24 @@ class Work {
 function Workcard({ work }: Props) {
   return (
     <div className="flex flex-row text-white">
-      <Card className="min-w-[400px]">
+      <Card className="md:min-w-[400px]">
         <CardHeader>
           <CardTitle className={` text-white text-3xl`}>
             <Button variant="link" className="p-0">
-              <a className="text-white text-3xl justify-start" href="/projects">
+              <a className="text-white text-xl md:text-3xl justify-start" href="/projects">
                 {work.company}
               </a>
             </Button>
           </CardTitle>
-          <CardDescription className="text-text text-2xl">
+          <CardDescription className="text-text text-lg md:text-2xl">
             {work.title}
           </CardDescription>
-          <CardDescription className="text-text text-lg">
+          <CardDescription className="text-text text-md md:text-lg">
             {work.duration}
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <ul className="text-sm font-medium text-white space-y-6">
+          <ul className="text-xs md:text-sm font-medium text-white space-y-4 md:space-y-6">
             {work.bullets.map((bulletPoint) => (
               <li key={bulletPoint}>{bulletPoint}</li>
             ))}

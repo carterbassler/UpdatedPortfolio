@@ -108,7 +108,7 @@ function work({}: Props) {
       </Link>
       <div>
         <motion.h1
-          className="text-5xl font-bold text-white py-2"
+          className="text-3xl md:text-5xl font-bold text-white py-2"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -117,7 +117,7 @@ function work({}: Props) {
           Professional Experience
         </motion.h1>
         <motion.p
-          className="text-xl text-text py-2"
+          className="text-lg md:text-xl text-text py-2"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -127,7 +127,7 @@ function work({}: Props) {
           dealing with a ton of different technologies
         </motion.p>
         <Separator className="pb-5" />
-        <div className="flex flex-row space-x-4 overflow-x-auto scrollbar-thin scrollbar-thumb-zinc-800 scrollbar-track-zinc-900 w-full smooth-scroll scroll-snap-type scroll-snap-align pb-10">
+        <div className="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-4 overflow-x-auto scrollbar-thin scrollbar-thumb-zinc-800 scrollbar-track-zinc-900 w-full smooth-scroll scroll-snap-type scroll-snap-align pb-10">
           {[work1, work2, work3, work4].map((work, index) => (
             <motion.div
               key={0}
