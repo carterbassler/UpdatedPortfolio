@@ -6,28 +6,14 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { CardStack } from "@/components/ui/card-stack";
-import { LampContainer } from "@/components/ui/lamp";
 import { Separator } from "@/components/ui/separator";
 import Workcard from "@/components/ui/workcard";
-import { cn } from "@/lib/utils";
 import { motion, useScroll } from "framer-motion";
 import Link from "next/link";
 import React, { useRef } from "react";
 import "tailwindcss/tailwind.css";
+import "../app/globals.css"
 import { Button } from "@/components/ui/button";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
-import {
-  IconArrowWaveRightUp,
-  IconBoxAlignRightFilled,
-  IconBoxAlignTopLeft,
-  IconClipboardCopy,
-  IconFileBroken,
-  IconSignature,
-  IconTableColumn,
-} from "@tabler/icons-react";
-import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
 
 type Props = {};
 
@@ -126,8 +112,8 @@ function work({}: Props) {
           I've had the opportunity to gain experience with some cool places
           dealing with a ton of different technologies
         </motion.p>
-        <Separator className="pb-5" />
-        <div className="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-4 overflow-x-auto scrollbar-thin scrollbar-thumb-zinc-800 scrollbar-track-zinc-900 w-full smooth-scroll scroll-snap-type scroll-snap-align pb-10">
+        <Separator className="my-1" />
+        <div className="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-4 overflow-x-auto scrollbar-thin scrollbar-thumb-zinc-800 scrollbar-track-zinc-900 w-full smooth-scroll scroll-snap-type scroll-snap-align pt-6 pb-10">
           {[work1, work2, work3, work4].map((work, index) => (
             <motion.div
               key={0}
@@ -139,7 +125,34 @@ function work({}: Props) {
                 ease: "easeInOut",
               }}
             >
-              <Workcard work={work} />
+              {/* <Workcard work={work} /> */}
+              <Card className="md:min-w-[400px]">
+                <CardHeader>
+                  <CardTitle className={` text-white text-3xl`}>
+                    <Button variant="link" className="p-0">
+                      <a
+                        className="text-white text-xl md:text-3xl justify-start"
+                        href="/projects"
+                      >
+                        Bank of New York Mellon
+                      </a>
+                    </Button>
+                  </CardTitle>
+                  <CardDescription className="text-text text-lg md:text-2xl">
+                    Software Engineer Intern
+                  </CardDescription>
+                  <CardDescription className="text-text text-md md:text-lg">
+                    June 2023 - August 2023
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ul className="text-xs md:text-sm font-medium text-white space-y-4 md:space-y-6">
+                    {work.bullets.map((bulletPoint) => (
+                      <li key={bulletPoint}>{bulletPoint}</li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
             </motion.div>
           ))}
         </div>

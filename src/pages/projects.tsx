@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import "tailwindcss/tailwind.css";
+import "../app/globals.css";
 import { Separator } from "@/components/ui/separator";
 import {
   Card,
@@ -29,16 +30,19 @@ class Project {
   description: string;
   icons: Framework[];
   link: string;
+  gitLink : string;
   constructor(
     _title: string,
     _description: string,
     _icons: Framework[],
-    _link: string
+    _link: string,
+    _gitLink : string,
   ) {
     this.title = _title;
     this.description = _description;
     this.icons = _icons;
     this.link = _link;
+    this.gitLink = _gitLink
   }
 }
 
@@ -59,27 +63,31 @@ const project1 = new Project(
   "Imperium",
   "A full-stack Flutter/Dart mobile application with workout tracking exercise addition, and set management features. Incorporated Firebase Firestore for real-time data handling and Firebase Authentication for secure user access control.",
   [flutter, firebase],
-  "https://apps.apple.com/us/app/imperiumfit/id6449546227?platform=iphone"
+  "https://apps.apple.com/us/app/imperiumfit/id6449546227?platform=iphone",
+  "https://github.com/carterbassler/WorkoutApp"
 );
 
 const project2 = new Project(
   "Vibify",
   "A Next JS web application that uses NextAuth and the Spotify API to allow users to log in and automate the process of saving their 'Discover Weekly' playlist. Also allows users to view their Spotify Wrapped.",
   [nextjs, typescript, vercel, spotifyAPI, tailwindCSS],
-  "https://music-helper-app.vercel.app/"
+  "https://music-helper-app.vercel.app/",
+  "https://github.com/carterbassler/SpotifyHelperApp"
 );
 
 const project3 = new Project(
   "Loo's List Clone",
   "A full-stack Django web application to display real-time University of Virginia class listings, integrated with Google user accounts for secure authentication, and utilized PostgreSQL for efficient data storage and access.",
   [django, postgresql, heroku],
-  ""
+  "",
+  "https://github.com/uva-cs3240-f22/project-a-12"
 );
 
 const project4 = new Project(
   "EdgeVantage  ",
   "A full-stack NextJs web app processes and aggregates odds from 5 sportsbooks using advanced data analysis to identify arbitrage opportunities and bets with positive Expected Value (EV), enhancing decision-making.",
   [nextjs, typescript, vercel, python, fastapi],
+  "",
   ""
 );
 
@@ -89,23 +97,25 @@ function projects({}: Props) {
   const transitionDuration = 1.7; // seconds, increased duration
   const delayOffset = 0.4;
   return (
-    <div className="bg-main min-h-screen flex flex-col p-6 overflow-auto">
-      <Link
-        href="/"
-        className="text-lg text-text hover:text-white transition ease-in-out"
-      >
-        &larr; Go Back
-      </Link>
-      <div>
-        <motion.h1
-          className="text-3xl md:text-5xl font-bold text-white py-2"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 2 }}
+    <div className="bg-main min-h-screen flex flex-col overflow-auto">
+      <div className="p-6">
+        <Link
+          href="/"
+          className="text-lg text-text hover:text-white transition ease-in-out"
         >
-          Personal Projects
-        </motion.h1>
+          &larr; Go Back
+        </Link>
+        <div>
+          <motion.h1
+            className="text-3xl md:text-5xl font-bold text-white py-2"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 2 }}
+          >
+            Personal Projects
+          </motion.h1>
+        </div>
         <motion.p
           className="text-lg md:text-xl text-text py-2"
           initial={{ opacity: 0 }}
@@ -115,8 +125,8 @@ function projects({}: Props) {
         >
           I love hacking together cool projects in my free time.{" "}
         </motion.p>
-        <Separator className="pb-5" />
-        <div className="flex flex-col md:grid md:grid-cols-2 items-center justify-center gap-8">
+        <Separator className="my-1" />
+        <div className="flex flex-col md:grid md:grid-cols-2 items-center justify-center gap-8 pt-5">
           {[project1, project2, project3, project4].map((project, index) => (
             <motion.div
               key={project.title}

@@ -7,11 +7,6 @@ import {
   CardHeader,
   CardTitle,
 } from "./card";
-import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from "@/components/ui/hover-card";
 import { motion } from "framer-motion";
 import { Button } from "./button";
 

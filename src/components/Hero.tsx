@@ -2,7 +2,15 @@ import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 import React, { Suspense, useState } from "react";
 import { Button } from "./ui/button";
 import { FaFile, FaGithub, FaLinkedinIn } from "react-icons/fa";
-import { Github, Linkedin, File, Briefcase, AppWindow } from "lucide-react";
+import {
+  Github,
+  Linkedin,
+  File,
+  Briefcase,
+  AppWindow,
+  Mail,
+  ArrowRightIcon,
+} from "lucide-react";
 import {
   Card,
   CardContent,
@@ -13,9 +21,77 @@ import {
 } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { Boxes } from "./ui/background-boxes";
-import { LampContainer } from "./ui/lamp";
+import {
+  GlowingStarsBackgroundCard,
+  GlowingStarsDescription,
+  GlowingStarsTitle,
+} from "./ui/glowing-stars";
+import { CardStack } from "./ui/card-stack";
+import { cn } from "@/lib/utils";
 
 type Props = {};
+
+export const Highlight = ({
+  children,
+  className,
+  link,
+}: {
+  children: React.ReactNode;
+  className?: string;
+  link : string;
+}) => {
+  return (
+    <a target="_blank" href={link}>
+      <span
+        className={cn(
+          "font-bold  bg-blue-700/[0.2] text-blue-500 px-1 py-0.5",
+          className
+        )}
+      >
+        {children}
+      </span>
+    </a>
+  );
+};
+
+const CARDS = [
+  {
+    id: 0,
+    name: "Carter Bassler",
+    designation: "Tech Guy",
+    content: (
+      <p>
+        I am a fourth-year Computer Science student at the{" "}
+        <Highlight link={'https://www.cavalierdaily.com/'}>University of Virginia</Highlight>. I love creating and
+        developing things that I am passionate about like my workout tracker 
+        app <Highlight link={'https://apps.apple.com/us/app/imperiumfit/id6449546227?platform=iphone'}>Imperium</Highlight>
+      </p>
+    ),
+  },
+  {
+    id: 1,
+    name: "Carter Bassler",
+    designation: "Pickleball Savant",
+    content: (
+      <p>
+        I've always been a lover of racket sports but have been getting really
+        into <Highlight link={'https://www.theonion.com/things-to-never-say-to-someone-who-loves-pickleball-1850540860'}>Pickleball</Highlight> and Squash recently
+      </p>
+    ),
+  },
+  {
+    id: 2,
+    name: "Carter Bassler",
+    designation: "Music Enthusiast",
+    content: (
+      <p>
+        I'm really passionate about music and listen to almost everything there
+        is. Check out my <Highlight link={'https://open.spotify.com/user/bassler.spotify?si=bf92c113ca744a9a'}>Spotify Profile</Highlight> for some of my
+        favorite playlists!
+      </p>
+    ),
+  },
+];
 
 function Hero({}: Props) {
   return (
@@ -35,7 +111,7 @@ function Hero({}: Props) {
           Carter Bassler
         </h1>
         <p className="text-center text-md md:text-lg text-text p-2">
-          Software Developer. Pickleball Savant. All Around Great Guy
+          Software Developer. CS Student. All Around Great Guy
         </p>
         <div className="flex flex-row items-center">
           <a href="https://github.com/carterbassler">
@@ -90,16 +166,7 @@ function Hero({}: Props) {
           </CardFooter>
         </Card>
         <div className="hidden md:flex justify-center items-center">
-          <motion.iframe
-            src="https://open.spotify.com/embed/playlist/3vYRlhFbkQaJzsV4kXBFV0?utm_source=generator"
-            width="350"
-            height="400"
-            allow="autoplay; clipboard-write;"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 2 }}
-          />
+          <CardStack items={CARDS} />
         </div>
         <Card className="custom-border-transition hover:border-white">
           <CardHeader>
@@ -113,7 +180,7 @@ function Hero({}: Props) {
           </CardHeader>
           <CardContent>
             <div className="flex flex-row space-x-2 items-center">
-              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+              <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
               <p className="text-sm md:text-base text-white">Currently:</p>
               <p className="text-sm md:text-base text-white font-semibold">
                 Working on EdgeVantage 🏈
