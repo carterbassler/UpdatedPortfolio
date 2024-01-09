@@ -54,12 +54,11 @@ type Props = {
 
 function ProjectCard({ project }: Props) {
   const [text, count] = useTypewriter({
-    words: ["UVA Student", "Music Enthusiast", "Avid Aston Villa Fan"],
+    words: ["I'll Finish I Swear", "Will I Ever Finish It?", "Still in Development"],
     loop: true,
     delaySpeed: 2000,
   });
   return (
-    <div>
       <Card>
         <CardHeader>
           <CardTitle className="text-xl md:text-3xl text-white">
@@ -106,9 +105,8 @@ function ProjectCard({ project }: Props) {
                 </div>
               ) : (
                 <div className="flex flex-row items-center">
-                  <Cursor cursorColor="rgb(59 130 246)" />
-                  <a className="text-white">
-                    
+                  <a className="font-semibold">
+                    Still in Development
                   </a>
                 </div>
               )}
@@ -135,7 +133,6 @@ function ProjectCard({ project }: Props) {
           </div>
         </CardFooter>
       </Card>
-    </div>
   );
 }
 

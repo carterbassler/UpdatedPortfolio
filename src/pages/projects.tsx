@@ -30,19 +30,19 @@ class Project {
   description: string;
   icons: Framework[];
   link: string;
-  gitLink : string;
+  gitLink: string;
   constructor(
     _title: string,
     _description: string,
     _icons: Framework[],
     _link: string,
-    _gitLink : string,
+    _gitLink: string
   ) {
     this.title = _title;
     this.description = _description;
     this.icons = _icons;
     this.link = _link;
-    this.gitLink = _gitLink
+    this.gitLink = _gitLink;
   }
 }
 
@@ -97,7 +97,7 @@ function projects({}: Props) {
   const transitionDuration = 1.7; // seconds, increased duration
   const delayOffset = 0.4;
   return (
-    <div className="bg-main min-h-screen flex flex-col overflow-auto">
+    <motion.div className="bg-main min-h-screen flex flex-col overflow-auto">
       <div className="p-6">
         <Link
           href="/"
@@ -125,7 +125,14 @@ function projects({}: Props) {
         >
           I love hacking together cool projects in my free time.{" "}
         </motion.p>
-        <Separator className="my-1" />
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 3 }}
+        >
+          <Separator className="my-1" />
+        </motion.div>
         <div className="flex flex-col md:grid md:grid-cols-2 items-center justify-center gap-8 pt-5">
           {[project1, project2, project3, project4].map((project, index) => (
             <motion.div
@@ -143,7 +150,7 @@ function projects({}: Props) {
           ))}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

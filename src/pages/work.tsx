@@ -12,8 +12,9 @@ import { motion, useScroll } from "framer-motion";
 import Link from "next/link";
 import React, { useRef } from "react";
 import "tailwindcss/tailwind.css";
-import "../app/globals.css"
+import "../app/globals.css";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 type Props = {};
 
@@ -81,6 +82,25 @@ const work4 = new Work(
   "/"
 );
 
+export const Highlight = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
+  return (
+    <span
+      className={cn(
+        "font-bold  bg-blue-700/[0.2] text-blue-500 px-1 py-0.5",
+        className
+      )}
+    >
+      {children}
+    </span>
+  );
+};
+
 function work({}: Props) {
   const transitionDuration = 1.7; // seconds, increased duration
   const delayOffset = 0.4;
@@ -109,8 +129,8 @@ function work({}: Props) {
           exit={{ opacity: 0 }}
           transition={{ duration: 2 }}
         >
-          I've had the opportunity to gain experience with some cool places
-          dealing with a ton of different technologies
+          I've had the opportunity to gain experience at some cool places
+          dealing with a lot of different technologies
         </motion.p>
         <Separator className="my-1" />
         <div className="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-4 overflow-x-auto scrollbar-thin scrollbar-thumb-zinc-800 scrollbar-track-zinc-900 w-full smooth-scroll scroll-snap-type scroll-snap-align pt-6 pb-10">
@@ -125,34 +145,7 @@ function work({}: Props) {
                 ease: "easeInOut",
               }}
             >
-              {/* <Workcard work={work} /> */}
-              <Card className="md:min-w-[400px]">
-                <CardHeader>
-                  <CardTitle className={` text-white text-3xl`}>
-                    <Button variant="link" className="p-0">
-                      <a
-                        className="text-white text-xl md:text-3xl justify-start"
-                        href="/projects"
-                      >
-                        Bank of New York Mellon
-                      </a>
-                    </Button>
-                  </CardTitle>
-                  <CardDescription className="text-text text-lg md:text-2xl">
-                    Software Engineer Intern
-                  </CardDescription>
-                  <CardDescription className="text-text text-md md:text-lg">
-                    June 2023 - August 2023
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ul className="text-xs md:text-sm font-medium text-white space-y-4 md:space-y-6">
-                    {work.bullets.map((bulletPoint) => (
-                      <li key={bulletPoint}>{bulletPoint}</li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
+              <Workcard work={work} />
             </motion.div>
           ))}
         </div>

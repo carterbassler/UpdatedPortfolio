@@ -37,10 +37,9 @@ class Work {
 
 function Workcard({ work }: Props) {
   return (
-    <div className="flex flex-row text-white">
-      <Card className="md:min-w-[400px]">
+      <Card className="md:min-w-[400px] h-full">
         <CardHeader>
-          <CardTitle className={` text-white text-3xl`}>
+          <CardTitle className={` text-white text-3xl `}>
             <Button variant="link" className="p-0">
               <a className="text-white text-xl md:text-3xl justify-start" href="/projects">
                 {work.company}
@@ -62,7 +61,6 @@ function Workcard({ work }: Props) {
           </ul>
         </CardContent>
       </Card>
-    </div>
   );
 }
 
