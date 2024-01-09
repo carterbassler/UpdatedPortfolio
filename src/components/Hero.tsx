@@ -1,7 +1,6 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 import React, { Suspense, useState } from "react";
 import { Button } from "./ui/button";
-import { FaFile, FaGithub, FaLinkedinIn } from "react-icons/fa";
 import {
   Github,
   Linkedin,
@@ -9,8 +8,6 @@ import {
   Briefcase,
   AppWindow,
   Mail,
-  ArrowRightIcon,
-  MousePointer,
   MapPin,
   Droplet,
 } from "lucide-react";
@@ -23,14 +20,9 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { Boxes } from "./ui/background-boxes";
-import {
-  GlowingStarsBackgroundCard,
-  GlowingStarsDescription,
-  GlowingStarsTitle,
-} from "./ui/glowing-stars";
 import { CardStack } from "./ui/card-stack";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 type Props = {};
 
@@ -156,10 +148,19 @@ function Hero({}: Props) {
             ease: "easeInOut",
           }}
         >
-          <Avatar className="flex h-20 w-16 md:h-24 md:w-20">
+          {/* <Avatar className="flex h-20 w-16 md:h-24 md:w-20">
             <AvatarImage src="/memoji.png" />
             <AvatarFallback>CB</AvatarFallback>
-          </Avatar>
+          </Avatar> */}
+          <div className="relative h-32 w-32 mx-auto">
+            <Image
+              className="object-contain rounded-full overflow-hidden"
+              layout="fill"
+              objectFit="contain"
+              src="/headshot-modified.png"
+              alt={""}
+            />
+          </div>
         </motion.div>
         <motion.div
           className="flex flex-col items-center justify-center"
@@ -288,21 +289,21 @@ function Hero({}: Props) {
               </CardDescription>
             </CardHeader>
             <CardContent>
-            <div className="flex flex-col space-y-1">
-              <div className="flex flex-row space-x-2 items-center">
-                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                <p className="text-sm md:text-base text-white">Currently:</p>
-                <p className="text-sm md:text-base text-white font-semibold">
-                  Working on EdgeVantage 🏈
-                </p>
-              </div>
-              <div className="flex flex-row space-x-2 items-center">
-                <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
-                <p className="text-sm md:text-base text-white">Prev:</p>
-                <p className="text-sm md:text-base text-white font-semibold">
-                  Released Imperium
-                </p>
-              </div>
+              <div className="flex flex-col space-y-1">
+                <div className="flex flex-row space-x-2 items-center">
+                  <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                  <p className="text-sm md:text-base text-white">Currently:</p>
+                  <p className="text-sm md:text-base text-white font-semibold">
+                    Working on EdgeVantage 🏈
+                  </p>
+                </div>
+                <div className="flex flex-row space-x-2 items-center">
+                  <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+                  <p className="text-sm md:text-base text-white">Prev:</p>
+                  <p className="text-sm md:text-base text-white font-semibold">
+                    Released Imperium
+                  </p>
+                </div>
               </div>
             </CardContent>
             <CardFooter>

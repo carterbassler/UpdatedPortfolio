@@ -40,11 +40,9 @@ function Workcard({ work }: Props) {
       <Card className="md:min-w-[400px] h-full">
         <CardHeader>
           <CardTitle className={` text-white text-3xl `}>
-            <Button variant="link" className="p-0">
-              <a className="text-white text-xl md:text-3xl justify-start" href="/projects">
+              <a className="text-white text-xl md:text-3xl justify-start">
                 {work.company}
               </a>
-            </Button>
           </CardTitle>
           <CardDescription className="text-text text-lg md:text-2xl">
             {work.title}

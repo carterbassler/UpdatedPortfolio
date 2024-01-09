@@ -45,7 +45,7 @@ const work1 = new Work(
   [
     "- Developed a Microfrontend for the Wealth Desktop Platform using Angular, streamlining internal processes and improving application performance 60% by optimizing data access",
     "- Assisted in the development of REST APIs with Spring Framework, integrating them with the frontend for seamless data transfer and optimized operations",
-    "- Designed and implemented error handling mechanisms for key applications, leading to a 70% reduction in pipelining errors and enhancing system reliability for 300+ users",
+    "- Designed and implemented error handling mechanisms for key applications, leading to a 70% reduction in pipelining errors and enhancing system reliability",
   ],
   "/emo.png"
 );
