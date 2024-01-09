@@ -227,12 +227,21 @@ function Hero({}: Props) {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="flex flex-row space-x-2 items-center">
-                <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
-                <p className="text-sm md:text-base text-white">Currently:</p>
-                <p className="text-sm md:text-base text-white font-semibold">
-                  Looking for New Grad Ops 👋
-                </p>
+              <div className="flex flex-col space-y-1">
+                <div className="flex flex-row space-x-2 items-center">
+                  <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                  <p className="text-sm md:text-base text-white">Currently:</p>
+                  <p className="text-sm md:text-base text-white font-semibold">
+                    Looking for New Grad Ops 👋
+                  </p>
+                </div>
+                <div className="flex flex-row space-x-2 items-center">
+                  <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+                  <p className="text-sm md:text-base text-white">Prev:</p>
+                  <p className="text-sm md:text-base text-white font-semibold">
+                    SWE Intern @ BNY Mellon
+                  </p>
+                </div>
               </div>
             </CardContent>
             <CardFooter>
@@ -279,12 +288,21 @@ function Hero({}: Props) {
               </CardDescription>
             </CardHeader>
             <CardContent>
+            <div className="flex flex-col space-y-1">
               <div className="flex flex-row space-x-2 items-center">
-                <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                 <p className="text-sm md:text-base text-white">Currently:</p>
                 <p className="text-sm md:text-base text-white font-semibold">
                   Working on EdgeVantage 🏈
                 </p>
+              </div>
+              <div className="flex flex-row space-x-2 items-center">
+                <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+                <p className="text-sm md:text-base text-white">Prev:</p>
+                <p className="text-sm md:text-base text-white font-semibold">
+                  Released Imperium
+                </p>
+              </div>
               </div>
             </CardContent>
             <CardFooter>
