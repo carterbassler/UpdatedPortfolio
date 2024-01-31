@@ -173,7 +173,7 @@ function Hero({}: Props) {
           }}
         >
           <h1 className="text-3xl md:text-5xl font-bold text-white">
-            Carter Bassler
+          Carter Bassler
           </h1>
           <p className="text-center text-md md:text-lg text-text p-2">
             Software Developer. CS Student. All Around Great Guy
@@ -233,7 +233,7 @@ function Hero({}: Props) {
                   <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                   <p className="text-sm md:text-base text-white">Currently:</p>
                   <p className="text-sm md:text-base text-white font-semibold">
-                    Looking for New Grad Ops 👋
+                    Software @ CrowdVolt (YC W24)
                   </p>
                 </div>
                 <div className="flex flex-row space-x-2 items-center">
